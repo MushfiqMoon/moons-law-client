@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import toast from 'react-hot-toast';
 import { Link, NavLink } from 'react-router-dom'
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                toast.success('Logout');
+            })
+            .catch((error) => console.error(error));
+    }
+
+
     return (
         <header className="text-gray-600 body-font bg-primary">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -15,7 +29,15 @@ const Header = () => {
                     <a className="mr-5 hover:text-gray-900">Third Link</a>
                     <a className="mr-5 hover:text-gray-900">Fourth Link</a>
                 </nav>
-                <Link to="/login" className="inline-flex items-center bg-accent border-0 py-1 px-3 focus:outline-none hover:bg-black rounded text-base-300 mt-4 md:mt-0">Log In</Link>
+                {
+                    user?.uid ?
+                        <>
+                            <div>{user?.displayName}</div>
+                            <button onClick={handleLogout} className="inline-flex items-center bg-accent border-0 py-1 px-3 focus:outline-none hover:bg-black rounded text-base-300 mt-4 md:mt-0">Log Out</button>
+                        </>
+                        :
+                        <Link to="/login" className="inline-flex items-center bg-accent border-0 py-1 px-3 focus:outline-none hover:bg-black rounded text-base-300 mt-4 md:mt-0">Log In</Link>
+                }
             </div>
         </header>
     )

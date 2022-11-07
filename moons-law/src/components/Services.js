@@ -21,13 +21,13 @@ const Services = () => {
                         <h2 className="text-xl font-medium title-font text-gray-900 mt-5">Shooting Stars</h2>
                         <p className="text-base leading-relaxed mt-2">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</p>
                         <button className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                            <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
                             </svg>
                         </button>
                     </div>
                 </div>
-                <button class="flex mx-auto mt-16 text-white bg-accent border-0 py-2 px-8 focus:outline-none hover:bg-black rounded text-md">More Services</button>
+                <button className="flex mx-auto mt-16 text-white bg-accent border-0 py-2 px-8 focus:outline-none hover:bg-black rounded text-md">More Services</button>
             </div>
         </section>
     )
