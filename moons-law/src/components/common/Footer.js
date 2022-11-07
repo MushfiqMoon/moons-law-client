@@ -32,9 +32,11 @@ const Footer = () => {
                     </div>
                 </div>
             </section>
-            <Footer className="bg-primary text-white">
+            <footer className="bg-primary text-white text-right">
+            <div className="container px-5 py-1">
                 <p>© 2022 Mushfiqur Rahman Moon</p>
-            </Footer>
+            </div>
+            </footer>
         </>
     )
 }
