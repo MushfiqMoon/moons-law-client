@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Footer = () => {
+    const currentTime = new Date()
+    let year = currentTime.getFullYear()
+
     return (
         <>
             <section className="text-gray-600 body-font bg-accent">
@@ -33,9 +36,9 @@ const Footer = () => {
                 </div>
             </section>
             <footer className="bg-primary text-white text-right">
-            <div className="container px-5 py-1">
-                <p>© 2022 Mushfiqur Rahman Moon</p>
-            </div>
+                <div className="container px-5 py-1">
+                    <p>© {year} Mushfiqur Rahman Moon</p>
+                </div>
             </footer>
         </>
     )

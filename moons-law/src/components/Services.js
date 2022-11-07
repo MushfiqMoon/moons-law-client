@@ -9,8 +9,8 @@ const Services = () => {
                         <div className="w-24 h-full bg-accent"></div>
                     </div>
                     <div className="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
-                        <h1 className="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0">How Can I Help You</h1>
-                        <p className="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Collaborations among attorneys in various disciplines produce innovative legal solutions for my clients. I work across offices and practice areas as integrated, multidisciplinary teams to provide the capabilities necessary to generate great results for my clients.</p>
+                        <h1 className="sm:w-2/5 text-accent font-medium title-font text-2xl mb-2 sm:mb-0">How Can I Help You</h1>
+                        <p className="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Collaborations among attorneys in various disciplines produce innovative legal solutions for my clients. I work across offices and provide the capabilities necessary to generate great results for my clients.</p>
                     </div>
                 </div>
                 <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
@@ -20,13 +20,14 @@ const Services = () => {
                         </div>
                         <h2 className="text-xl font-medium title-font text-gray-900 mt-5">Shooting Stars</h2>
                         <p className="text-base leading-relaxed mt-2">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</p>
-                        <button className="text-yellow-500 inline-flex items-center mt-3">Learn More
-                            {/* <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                        <button className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg> */}
+                            </svg>
                         </button>
                     </div>
                 </div>
+                <button class="flex mx-auto mt-16 text-white bg-accent border-0 py-2 px-8 focus:outline-none hover:bg-black rounded text-md">More Services</button>
             </div>
         </section>
     )

@@ -12,7 +12,7 @@ const Hero = () => {
                             Legal Solution</h1>
                         <p className="mb-5">Law is commonly Understood as a System of rules that are Created
                             and Enforced through social or Government</p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <button className="btn btn-primary text-accent">Get Started</button>
                     </div>
                 </div>
             </div>
