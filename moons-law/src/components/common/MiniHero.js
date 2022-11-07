@@ -3,7 +3,7 @@ import background  from '../../assets/mini-hero.jpg'
 
 const MiniHero = ({ title }) => {
     return (
-        <div className="hero" style={{ backgroundImage: `url(${background})` }}>
+        <div className="strokeLinejoin" style={{ backgroundImage: `url(${background})` }}>
             <div className="hero-overlay bg-opacity-70"></div>
             <div className="container">
                 <div className="text-white py-40">
