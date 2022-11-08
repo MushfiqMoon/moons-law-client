@@ -7,6 +7,7 @@ import Blog from "../pages/Blog";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -26,7 +27,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/blog",
-                element: <Blog />,
+                element: <PrivateRoute><Blog /></PrivateRoute>,
             },
             {
                 path: "/services",
@@ -38,11 +39,11 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/login",
-                element: <LoginPage/>
+                element: <LoginPage />
             },
             {
                 path: "/register",
-                element: <RegisterPage/>
+                element: <RegisterPage />
             },
 
         ]
