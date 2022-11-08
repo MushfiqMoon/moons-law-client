@@ -34,7 +34,6 @@ const QuickLogin = () => {
             });
     }
 
-
     return (
         <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
             <h1 className="title-font font-medium text-3xl text-gray-900">Or You Can Sign Up with</h1>
