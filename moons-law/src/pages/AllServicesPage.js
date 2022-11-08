@@ -1,7 +1,12 @@
 import React from 'react'
+import { useLoaderData } from 'react-router-dom';
 import MiniHero from '../components/common/MiniHero'
 
 const AllServicesPage = () => {
+
+  const services = useLoaderData();
+  const latestServices = services.sort((a, b) => b.timeStamp - a.timeStamp);
+
   return (
     <>
       <MiniHero title="Services" />
@@ -16,38 +21,24 @@ const AllServicesPage = () => {
             <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Collaborations among attorneys in various disciplines produce innovative legal solutions for my clients. I work across offices and provide the capabilities necessary to generate great results for my clients.</p>
           </div>
           <div className="flex flex-wrap -m-4">
-            <div className="xl:w-1/4 md:w-1/2 p-4">
-              <div className="bg-gray-100 p-6 rounded-lg">
-                <img className="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content" />
-                  <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-                  <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
-                  <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
-            <div className="xl:w-1/4 md:w-1/2 p-4">
-              <div className="bg-gray-100 p-6 rounded-lg">
-                <img className="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/721x401" alt="content" />
-                  <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-                  <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
-                  <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
-            <div className="xl:w-1/4 md:w-1/2 p-4">
-              <div className="bg-gray-100 p-6 rounded-lg">
-                <img className="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/722x402" alt="content" />
-                  <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-                  <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Great Pyramid of Giza</h2>
-                  <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
-            <div className="xl:w-1/4 md:w-1/2 p-4">
-              <div className="bg-gray-100 p-6 rounded-lg">
-                <img className="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/723x403" alt="content" />
-                  <h3 className="tracking-widest text-yellow-500 text-xs font-medium title-font">SUBTITLE</h3>
-                  <h2 className="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-                  <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-              </div>
-            </div>
+
+            {
+              latestServices.map(data =>
+                <div key={data?._id} className="xl:w-1/4 md:w-1/2 p-4">
+                  <div className="bg-gray-100 p-3 rounded-lg">
+                    <img className="h-40 rounded w-full object-cover object-center mb-6" src={data ? data?.imageUrl : 'https://dummyimage.com/720x400'} />
+                    <h3 className="tracking-widest text-accent text-lg font-medium title-font">${data?.price}</h3>
+                    <h2 className="text-xl text-primary font-medium title-font mb-4">{data?.name}</h2>
+                    <p className="leading-relaxed text-base">{data?.message.slice(0, 100)} ...</p>
+                    <button className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
+                      <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>)
+            }
+
           </div>
         </div>
       </section>

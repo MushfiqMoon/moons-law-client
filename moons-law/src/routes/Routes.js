@@ -22,10 +22,12 @@ export const routes = createBrowserRouter([
             {
                 path: "/",
                 element: <HomePage />,
+                loader: async () => fetch(`http://localhost:5000/services`),
             },
             {
                 path: "/home",
                 element: <HomePage />,
+                loader: async () => fetch(`http://localhost:5000/services`),
             },
             {
                 path: "/blog",
@@ -42,6 +44,7 @@ export const routes = createBrowserRouter([
             {
                 path: "/services",
                 element: <AllServicesPage />,
+                loader: async () => fetch(`http://localhost:5000/services`),
             },
 
             {

@@ -1,7 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 
-const Services = () => {
+const Services = ({ services }) => {
+
+    const latestService = services.sort((a, b) => b.timeStamp - a.timeStamp);
+    const datas = latestService.slice(0, 3);
+
     return (
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-20 mx-auto">
@@ -15,19 +19,26 @@ const Services = () => {
                     </div>
                 </div>
                 <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-                    <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
-                        <div className="rounded-lg h-64 overflow-hidden">
-                            <img alt="content" className="object-cover object-center h-full w-full" src="https://res.cloudinary.com/dxgr1p8tm/image/upload/v1667902115/moons-law/family-service_vxtvru.jpg" />
-                        </div>
-                        <h2 className="text-xl font-medium title-font text-gray-900 mt-5">Shooting Stars</h2>
-                        <p className="text-base leading-relaxed mt-2">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</p>
-                        <button className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
-                            <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
-                    </div>
+                    {
+                        datas.map(data =>
+
+                            <div key={data?._id} className="p-4 md:w-1/3 sm:mb-0 mb-6">
+                                <div className="rounded-lg h-64 overflow-hidden">
+                                    <img src={data? data?.imageUrl : 'https://dummyimage.com/1203x503'} alt={data?.name} className="object-cover object-center h-full w-full" />
+                                </div>
+                                <h2 className="text-2xl font-medium title-font text-gray-900 mt-5">{data?.name}</h2>
+                                <h2 className="text-xl font-bold title-font text-primary mt-2">${data?.price}</h2>
+                                <p className="text-base leading-relaxed mt-2">{data?.message.slice(0,150)} ...</p>
+                                <button className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
+                                    <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        )
+                    }
                 </div>
+
                 <button className="flex mx-auto mt-16 text-white bg-accent border-0 py-2 px-8 focus:outline-none hover:bg-primary rounded text-md"><Link to="/services">More Services</Link></button>
             </div>
         </section>
