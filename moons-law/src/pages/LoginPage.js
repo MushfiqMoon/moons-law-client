@@ -16,7 +16,7 @@ const LoginPage = () => {
     const navigate = useNavigate()
 
     // user and password loing 
-    const handleSubmit = (e) => {
+    const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;

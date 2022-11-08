@@ -1,8 +1,46 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import toast from 'react-hot-toast';
+import { AuthContext } from '../contexts/AuthProvider';
 
 const AddSErvice = () => {
 
-    const date = new Date().getTime()
+    const { user } = useContext(AuthContext);
+    const stamp = new Date().getTime()
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        const form = e.target;
+
+
+
+        const service = {
+            name: e.target.name.value,
+            imageUrl: e.target.imageUrl.value,
+            price: e.target.price.value,
+            message: e.target.message.value,
+            createdBy: user?.displayName,
+            timeStamp: stamp
+        }
+        console.log(service)
+        // sending the data to server
+
+        fetch('http://localhost:5000/services', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(service),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+                if (data.acknowledged) {
+                    toast.success('Service Added')
+                    form.reset()
+                }
+            })
+    }
+
 
     return (
         <section class="text-gray-600 body-font relative">
@@ -12,7 +50,7 @@ const AddSErvice = () => {
                     <p class="lg:w-2/3 mx-auto leading-relaxed text-base">From here you can add diffrent service</p>
                 </div>
                 <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                    <div class="flex flex-wrap -m-2">
+                    <form onSubmit={handleSubmit} class="flex flex-wrap -m-2">
                         <div class="p-2 w-full">
                             <div class="relative">
                                 <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
@@ -40,7 +78,7 @@ const AddSErvice = () => {
                         <div class="p-2 w-full">
                             <button class="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Button</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>
