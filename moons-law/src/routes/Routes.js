@@ -22,12 +22,12 @@ export const routes = createBrowserRouter([
             {
                 path: "/",
                 element: <HomePage />,
-                loader: async () => fetch(`http://localhost:5000/services`),
+                loader: async () => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services`),
             },
             {
                 path: "/home",
                 element: <HomePage />,
-                loader: async () => fetch(`http://localhost:5000/services`),
+                loader: async () => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services`),
             },
             {
                 path: "/blog",
@@ -43,13 +43,14 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/services",
+                loader: async () => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services`),
                 element: <AllServicesPage />,
-                loader: async () => fetch(`http://localhost:5000/services`),
             },
 
             {
-                path: "/services/single",
+                path: "/services/:id",
                 element: <ServiceSingle />,
+                loader: async ({ params }) => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services/${params.id}`),
             },
             {
                 path: "/add-services",

@@ -55,3 +55,51 @@ Car accident law refers to the legal rules that determine who is responsible for
 https://res.cloudinary.com/dxgr1p8tm/image/upload/v1667902113/moons-law/car-service_txyk39.jpg
 
 59
+
+
+
+
+
+
+
+===============================
+===============================
+
+[
+  {
+    "_id": "636ab4e10666dde9034e7f54",
+    "name": "Dispute Resolution",
+    "imageUrl": "https://res.cloudinary.com/dxgr1p8tm/image/upload/v1667902113/moons-law/disput-service_xiqbpg.jpg",
+    "price": "299",
+    "message": "A starting point with dispute resolution can be negotiation. Both sides seek to find common ground on a dispute. This could be internal grievances around employment or director responsibilities, or disputes with 3rd parties, such as trading partners and investors. Considering the view taken by the opposing party is key. But sometimes the differences are too broad and the negotiation process fails. This leads to other dispute resolution remedies being considered. Mediation is a process by which the parties involved in the dispute come together, but with an independent party present - the mediator - who tries to help the disputing parties come to a resolution that both sides can live with. The mediator is impartial and it is not their role to come to a decision, but rather to help both sides agree to a resolution. Mediation is not as formal as the arbitration and litigation processes and as a result, it is usually much cheaper. In mediation, a settlement agreement is drafted after a resolution, detailing what both sides have agreed to comply with. Arbitration is a more formal legal process. This uses an independent arbitrator to make a decision about the dispute. All parties provide evidence and the arbitrator uses this information to come to a conclusion, seeking to resolve the dispute. This form of dispute resolution allows all parties to have an influence on the process. As there are no court-imposed deadlines, it can be more flexible. It is also generally cheaper than litigation. Arbitration decisions are legally binding and they are generally able to be enforced in a similar way to court judgments, so taking legal advice is highly recommended If the more informal dispute resolution methods fail, then going to court may be the only option remaining. Litigation is when a dispute resolution Solicitor is enlisted to help resolve the dispute, giving expert advice on the best approach. Dispute resolution Solicitors will deal with court proceedings and manage all the documentation throughout the process. Litigation is usually the most expensive form of dispute resolution. If it goes in court, it is likely that the other side will have also taken expert legal advice.",
+    "createdBy": "mushfiq.moon013@gmail.com",
+    "timeStamp": 1667936588033
+  },
+  {
+    "_id": "636ab7060666dde9034e7f55",
+    "name": "Personal Injury ",
+    "imageUrl": "https://res.cloudinary.com/dxgr1p8tm/image/upload/v1667902113/moons-law/personal-injury-service_zeyr94.jpg",
+    "price": "199",
+    "message": "Personal injury law, or sometimes referred to as tort law, covers cases where a person is hurt or injured, as a result of someone else’s negligence. This is a form of civil law, which means one private party is suing another, unlike criminal law where the government prosecutes someone. In these suits the injury may not have even been caused by a crime, just simple carelessness. Lawsuits can help the injured person collect damages, which can help cover medical bills or lost wages from the injury. More often than not in the realm of personal injury law, cases are settled before the trial phase of the legal proceeding. Instead of trial, the two parties and their lawyers discuss the issue and agree on a settlement. If the case does go to trial it may be heard by a judge and a jury, or a judge alone.  In this case they are responsible for determining the extent to which each party is liable and calculating a fair amount of damages for the incident. Personal injury makes up the largest category of civil lawsuits, mainly because it covers such a wide range of situations; anywhere from falling at work to medical malpractice. Representing over half of personal injury cases each year, car accidents are the most common cause of injury lawsuits. Car accident cases are the kinds of cases where the plaintiff, or injured person, is most likely to be successful, and they result in a median award of $16,000. Car accidents can include collisions between two drivers, or incidents where a driver hits a pedestrian or biker.",
+    "createdBy": "mushfiq.moon013@gmail.com",
+    "timeStamp": 1667937998300
+  },
+  {
+    "_id": "636abfeb0666dde9034e7f56",
+    "name": "Corporate Service",
+    "imageUrl": "https://res.cloudinary.com/dxgr1p8tm/image/upload/v1667902113/moons-law/corporate-service_lotj8m.jpg",
+    "price": "399",
+    "message": "Corporate law (also known as business law, company law or enterprise law) is the body of law governing the rights, relations, and conduct of persons, companies, organizations and businesses. The term refers to the legal practice of law relating to corporations, or to the theory of corporations. Corporate law often describes the law relating to matters which derive directly from the life-cycle of a corporation.[1] It thus encompasses the formation, funding, governance, and death of a corporation. While the minute nature of corporate governance as personified by share ownership, capital market, and business culture rules differ, similar legal characteristics and legal problems exist across many jurisdictions. Corporate law regulates how corporations, investors, shareholders, directors, employees, creditors, and other stakeholders such as consumers, the community, and the environment interact with one another.[1] Whilst the term company or business law is colloquially used interchangeably with corporate law, the term business law mostly refers to wider concepts of commercial law, that is the law relating to commercial and business related purposes and activities. In some cases, this may include matters relating to corporate governance or financial law. When used as a substitute for corporate law, business law means the law relating to the business corporation (or business enterprises), including such activity as raising capital, company formation, and registration with the government.",
+    "createdBy": "mushfiq.moon013@gmail.com",
+    "timeStamp": 1667940295639
+  },
+  {
+    "_id": "636ae09f3b18aaa81882c415",
+    "name": "Employment Law",
+    "imageUrl": "https://res.cloudinary.com/dxgr1p8tm/image/upload/v1667902113/moons-law/employe-service_zcrnsm.jpg",
+    "price": "99",
+    "message": "With a population of 168.1 million people, Bangladesh has a huge and cheap workforce of about 90 million, consisting of 60 million agricultural jobs (growing at one percent per year) and 30 million non-agricultural jobs (growing at six percent per annum). Industrial jobs fall mostly within non-agricultural work. All employers are required to follow federal labor laws that prescribe conditions of employment, working hours, salary levels, leave policies, health and health conditions, and insurance for injured workers. Bangladesh constitution guarantees freedom of association and the right to join unions in it’s jurisdiction of Employee Rights & Labour Law in Bangladesh.  The 2006 Bangladesh Labor Act is relatively sweeping and progressive. The Act consolidates and replaces the 25 existing acts. The comprehensive nature of the law can immediately be gleaned from its coverage — conditions of service and employment, youth employment, maternity benefit, health hygiene, safety, welfare, working hours and leave, wages and payment, workers’ compensation for injury, trade unions and industrial relations, disputes, labour court, workers’ participation in companies profits, regulation of employment and safety of dock workers, provident funds, apprenticeship, penalty and procedure, administration, inspection, etc.",
+    "createdBy": "mushfiq.moon013@gmail.com",
+    "timeStamp": 1667948672498
+  }
+]

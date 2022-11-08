@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useLoaderData } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Services = ({ services }) => {
 
@@ -29,11 +29,11 @@ const Services = ({ services }) => {
                                 <h2 className="text-2xl font-medium title-font text-gray-900 mt-5">{data?.name}</h2>
                                 <h2 className="text-xl font-bold title-font text-primary mt-2">${data?.price}</h2>
                                 <p className="text-base leading-relaxed mt-2">{data?.message.slice(0,150)} ...</p>
-                                <button className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
+                                <Link to={`/services/${data?._id}`} className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
                                     <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                                     </svg>
-                                </button>
+                                </Link>
                             </div>
                         )
                     }

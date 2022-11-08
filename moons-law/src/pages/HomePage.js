@@ -13,7 +13,7 @@ const HomePage = () => {
         <>
             <Hero />
             <Services services={services} />
-            <Overview />
+            <Overview services={services}/>
             <Subscribe />
         </>
     )

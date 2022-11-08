@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Overview = () => {
+const Overview = ({ services }) => {
+    const totalService = services.length
     return (
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-10 mx-auto flex flex-wrap">
@@ -22,7 +23,7 @@ const Overview = () => {
                         <p className="leading-relaxed">Company</p>
                     </div>
                     <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                        <h2 className="title-font font-medium text-4xl text-primary">8</h2>
+                        <h2 className="title-font font-medium text-4xl text-primary">{totalService}</h2>
                         <p className="leading-relaxed">Services</p>
                     </div>
                 </div>

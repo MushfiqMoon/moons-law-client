@@ -28,7 +28,6 @@ const Header = () => {
                     <NavLink to="/home" className="text-white mr-5 hover:text-gray-900">Home</NavLink>
                     <NavLink to="/services" className="text-white mr-5 hover:text-gray-900">Services</NavLink>
                     <NavLink to="/blog" className="text-white mr-5 hover:text-gray-900">Blog</NavLink>
-                    <NavLink to="/services/single" className="text-white mr-5 hover:text-gray-900">Single</NavLink>
                 
                 {
                     user?.uid ?

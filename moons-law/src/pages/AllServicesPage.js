@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import MiniHero from '../components/common/MiniHero'
 
 const AllServicesPage = () => {
@@ -30,11 +30,11 @@ const AllServicesPage = () => {
                     <h3 className="tracking-widest text-accent text-lg font-medium title-font">${data?.price}</h3>
                     <h2 className="text-xl text-primary font-medium title-font mb-4">{data?.name}</h2>
                     <p className="leading-relaxed text-base">{data?.message.slice(0, 100)} ...</p>
-                    <button className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
+                    <Link to={`/services/${data?._id}`} className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
                       <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                       </svg>
-                    </button>
+                    </Link>
                   </div>
                 </div>)
             }
