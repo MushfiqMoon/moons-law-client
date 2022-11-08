@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../components/common/ErrorPage";
+import ServiceSingle from "../components/ServiceSingle";
 import Main from "../layout/Main";
 import AllServicesPage from "../pages/AllServicesPage";
 import Blog from "../pages/Blog";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/RegisterPage";
 
 
 
@@ -27,13 +29,21 @@ export const routes = createBrowserRouter([
                 element: <Blog />,
             },
             {
-                path: "/all-services",
+                path: "/services",
                 element: <AllServicesPage />,
+            },
+            {
+                path: "/services/single",
+                element: <ServiceSingle />,
             },
             {
                 path: "/login",
                 element: <LoginPage/>
-            }
+            },
+            {
+                path: "/register",
+                element: <RegisterPage/>
+            },
 
         ]
     },
