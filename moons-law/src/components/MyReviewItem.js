@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const MyReviewItem = ({ review , handleDelete }) => {
+const MyReviewItem = ({ review, handleDelete }) => {
 
-    const { sid, serviceName, reviewMessage,reviewerName, rmail, _id } = review;
+    const { sid, serviceName, reviewMessage, reviewerName, rmail, _id } = review;
 
     const [serviceData, setServiceData] = useState({})
-
-    console.log(review)
 
     // fatching image for service 
     useEffect(() => {
@@ -17,12 +15,11 @@ const MyReviewItem = ({ review , handleDelete }) => {
             .then(data => {
                 setServiceData(data)
             })
-            .catch(err => console.error(err))
-
+            .catch(err => console.error(err))        
 
     }, [sid])
 
-    
+
     return (
         <tr>
             <td className="px-4 py-3 text-primary font-bold">
@@ -39,10 +36,10 @@ const MyReviewItem = ({ review , handleDelete }) => {
             <td className="px-4 py-3">
                 {reviewerName} <br />
                 <span className="badge badge-ghost badge-sm">{rmail}</span>
-                </td>
+            </td>
             <td className="px-4 py-3">
                 <div className="my-review-action flex">
-                    <button className='flex items-center py-2 pr-5 text-primary'><FaRegEdit /> Edit</button>
+                    <Link to={`/my-reviews/edit/${_id}`} className='flex items-center py-2 pr-5 text-primary'><FaRegEdit /> Edit</Link>
                     <button onClick={() => handleDelete(_id)} className='flex items-center py-2 text-orange-600'><FaRegTrashAlt /> Delete</button>
 
                 </div>

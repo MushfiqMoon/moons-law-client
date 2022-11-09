@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../components/common/ErrorPage";
+import MyReviewEdit from "../components/MyReviewEdit";
 import ServiceSingle from "../components/ServiceSingle";
 import Main from "../layout/Main";
 import AddService from "../pages/AddService";
@@ -54,11 +55,16 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/add-services",
-                element: <PrivateRoute><AddService /></PrivateRoute>
+                element: <PrivateRoute><AddService /></PrivateRoute>,
             },
             {
                 path: "/my-reviews",
-                element: <PrivateRoute><MyReviews /></PrivateRoute>
+                element: <PrivateRoute><MyReviews /></PrivateRoute>,
+            },
+            {
+                path: "/my-reviews/edit/:id",
+                element: <PrivateRoute><MyReviewEdit /></PrivateRoute>,
+                loader: async ({ params }) => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/${params.id}`),
             },
 
         ]
