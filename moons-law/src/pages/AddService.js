@@ -11,8 +11,6 @@ const AddSErvice = () => {
         e.preventDefault();
         const form = e.target;
 
-
-
         const service = {
             name: e.target.name.value,
             imageUrl: e.target.imageUrl.value,
@@ -21,10 +19,10 @@ const AddSErvice = () => {
             createdBy: user?.email,
             timeStamp: stamp
         }
-        console.log(service)
+
         // sending the data to server
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
