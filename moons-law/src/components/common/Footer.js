@@ -49,7 +49,7 @@ const Footer = () => {
                         <span className="ml-3 text-2xl text-accent">Moons Law</span>
                     </Link>
                     <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© {year} Mushfiq —  
-                        <a href="https://twitter.com/knyttneve" className="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@moons_Law</a>
+                        <a href="https://www.facebook.com/mushfiq013/" className="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@moons_Law</a>
                     </p>
                     <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                         <a target="_blank" href='https://www.facebook.com/mushfiq013/' className="text-blue-500">

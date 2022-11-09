@@ -6,7 +6,6 @@ import { AuthContext } from '../contexts/AuthProvider';
 const ServiceSingle = () => {
 
     const { user } = useContext(AuthContext);
-    // const reviewData =  useLoaderData();
     const { imageUrl, name, message, price, _id } = useLoaderData();
     const [reviews, setReviews] = useState([])
 
@@ -48,7 +47,7 @@ const ServiceSingle = () => {
     // Receiving service based review 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/?sid=${_id}`)
+        fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/?sid=${_id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
