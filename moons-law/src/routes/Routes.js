@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../components/common/ErrorPage";
 import MyReviewEdit from "../components/MyReviewEdit";
-import ServiceSingle from "../components/ServiceSingle";
 import Main from "../layout/Main";
 import AddService from "../pages/AddService";
 import AllServicesPage from "../pages/AllServicesPage";
@@ -10,6 +9,7 @@ import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import MyReviews from "../pages/MyReviews";
 import RegisterPage from "../pages/RegisterPage";
+import ServiceSingle from "../pages/ServiceSingle";
 import PrivateRoute from "./PrivateRoute";
 
 

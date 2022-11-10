@@ -88,7 +88,7 @@ const ServiceSingle = () => {
                                 <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                                     <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
                                         <a className="inline-flex items-center mr-10">
-                                            <img alt="blog" src={user?.photoURL ? user?.photoURL : 'https://placeimg.com/80/80/people'} className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
+                                            <img alt="user" src={user?.photoURL ? user?.photoURL : 'https://placeimg.com/80/80/people'} className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
                                             <span className="flex-grow flex flex-col pl-4">
                                                 <span className="title-font font-medium text-gray-900">{user?.displayName}</span>
                                                 <span className="mt-1 text-gray-500 text-sm">{user?.email}</span>
@@ -121,7 +121,7 @@ const ServiceSingle = () => {
                                         <div className="p-8 flex flex-wrap md:flex-nowrap">
                                             <div className="md:w-64 md:mb-0 mb-6 mr-20 flex-shrink-0 flex flex-col">
                                                 <a className="inline-flex items-center">
-                                                    <img alt="blog" src={review ? review?.reviewerphotoUrl : 'https://placeimg.com/80/80/people'} className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
+                                                    <img alt="user" src={review ? review?.reviewerphotoUrl : 'https://placeimg.com/80/80/people'} className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
                                                     <span className="flex-grow flex flex-col pl-4">
                                                         <span className="title-font font-medium text-gray-900">{review ? review?.reviewerName : "Anonymous User"}</span>
                                                         <span className="mt-1 text-gray-500 text-sm">{review?.rmail}</span>

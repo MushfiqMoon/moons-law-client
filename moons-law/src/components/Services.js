@@ -1,11 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { SpinnerDotted } from 'spinners-react';
 
 const Services = ({ services }) => {
 
     const latestService = services.sort((a, b) => b.timeStamp - a.timeStamp);
     let datas = latestService.slice(0, 3);
+
+    const num = 0
+    console.log()
+    console.log(datas.length)
 
     return (
         <section className="text-gray-600 body-font">
@@ -19,29 +24,35 @@ const Services = ({ services }) => {
                         <p className="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Collaborations among attorneys in various disciplines produce innovative legal solutions for my clients. I work across offices and provide the capabilities necessary to generate great results for my clients.</p>
                     </div>
                 </div>
-                <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+                <div className="flex justify-center flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
                     {
-                        datas.map(data =>
+                        datas.length
+                            ?
+                            datas.map(data =>
 
-                            <div key={data?._id} className="p-4 md:w-1/3 sm:mb-0 mb-6">
-                                <div className="rounded-lg h-64 overflow-hidden">
-                                    <PhotoProvider>
-                                        <PhotoView src={data ? data?.imageUrl : 'https://dummyimage.com/1203x503'}>
-                                            <img src={data ? data?.imageUrl : 'https://dummyimage.com/1203x503'} alt={data?.name} className="cursor-pointer object-cover object-center h-full w-full" />
-                                        </PhotoView>
-                                    </PhotoProvider>
+                                <div key={data?._id} className="p-4 md:w-1/3 sm:mb-0 mb-6">
+                                    <div className="rounded-lg h-64 overflow-hidden">
+                                        <PhotoProvider>
+                                            <PhotoView src={data ? data?.imageUrl : 'https://dummyimage.com/1203x503'}>
+                                                <img src={data ? data?.imageUrl : 'https://dummyimage.com/1203x503'} alt={data?.name} className="cursor-pointer object-cover object-center h-full w-full" />
+                                            </PhotoView>
+                                        </PhotoProvider>
+                                    </div>
+                                    <h2 className="text-2xl font-medium title-font text-gray-900 mt-5">{data?.name}</h2>
+                                    <h2 className="text-xl font-bold title-font text-primary mt-2">${data?.price}</h2>
+                                    <p className="text-base leading-relaxed mt-2">{data?.message.slice(0, 150)} ...</p>
+                                    <Link to={`/services/${data?._id}`} className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
+                                        <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                        </svg>
+                                    </Link>
                                 </div>
-                                <h2 className="text-2xl font-medium title-font text-gray-900 mt-5">{data?.name}</h2>
-                                <h2 className="text-xl font-bold title-font text-primary mt-2">${data?.price}</h2>
-                                <p className="text-base leading-relaxed mt-2">{data?.message.slice(0, 150)} ...</p>
-                                <Link to={`/services/${data?._id}`} className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
-                                    <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </Link>
-                            </div>
-                        )
-                        
+                            )
+                            :
+                            <>
+                                <SpinnerDotted size={60} thickness={100} speed={100} color="rgba(224, 168, 46, 1)" />
+                            </>
+
                     }
                 </div>
 

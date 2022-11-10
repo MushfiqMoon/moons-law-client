@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
+import { SpinnerDotted } from 'spinners-react';
 
 
 const PrivateRoute = ({ children }) => {
@@ -10,9 +11,7 @@ const PrivateRoute = ({ children }) => {
 
     if (loading) {
         return (
-            <div className='d-flex justify-content-center mt-5'>
-                <progress className="progress w-full"></progress>
-            </div>
+            <SpinnerDotted size={60} thickness={100} speed={100} color="rgba(224, 168, 46, 1)" />
         )
     }
 

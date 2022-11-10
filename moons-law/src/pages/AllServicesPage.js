@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useLoaderData } from 'react-router-dom';
 import MiniHero from '../components/common/MiniHero'
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { SpinnerDotted } from 'spinners-react';
 
 const AllServicesPage = () => {
 
@@ -21,11 +22,10 @@ const AllServicesPage = () => {
             </div>
             <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Collaborations among attorneys in various disciplines produce innovative legal solutions for my clients. I work across offices and provide the capabilities necessary to generate great results for my clients.</p>
           </div>
-          <div className="flex flex-wrap -m-4">
+          <div className="flex flex-wrap justify-center -m-4">
 
             {
-              // latestServices.length > 0
-              false
+              latestServices.length 
                 ?
                 latestServices.map(data =>
                   <div key={data?._id} className="xl:w-1/3 md:w-1/2 p-4">
@@ -47,9 +47,8 @@ const AllServicesPage = () => {
                   </div>)
 
                 :
-                <div className='d-flex justify-content-center mt-5'>
-                  <progress className="progress w-full"></progress>
-                </div>
+                <SpinnerDotted size={60} thickness={100} speed={100} color="rgba(224, 168, 46, 1)" />
+                
             }
 
           </div>
