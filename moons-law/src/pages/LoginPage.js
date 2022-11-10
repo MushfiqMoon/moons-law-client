@@ -32,7 +32,7 @@ const LoginPage = () => {
                 }
 
                 // get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

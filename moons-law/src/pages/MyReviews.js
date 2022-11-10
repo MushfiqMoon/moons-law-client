@@ -12,7 +12,7 @@ const MyReviews = () => {
   const { user, logOut } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/?rmail=${user?.email}`, {
+    fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/?rmail=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem('moonslaw-token')}`
       }
