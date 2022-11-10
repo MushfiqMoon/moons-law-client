@@ -23,7 +23,7 @@ const ServiceSingle = () => {
         }
 
         // sending the data to server
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -33,7 +33,6 @@ const ServiceSingle = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log("from post", data)
                 if (data.acknowledged) {
                     toast.success('Review Added')
                     form.reset()
@@ -48,7 +47,7 @@ const ServiceSingle = () => {
     // Receiving service based review 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/?sid=${_id}`, {
+        fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/?sid=${_id}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('moonslaw-token')}`
             }

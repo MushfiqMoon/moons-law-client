@@ -10,7 +10,7 @@ const MyReviewEdit = () => {
     const { id } = router;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/${id}`, {
           headers: {
             authorization: `Bearer ${localStorage.getItem('moonslaw-token')}`
           }
@@ -33,7 +33,7 @@ const MyReviewEdit = () => {
             reviewMessage: e.target.message.value
         }
 
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",
@@ -42,7 +42,6 @@ const MyReviewEdit = () => {
             body: JSON.stringify(review)
         }).then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount) {
                     toast.success('Review Updated');
                     navigate("/reviews")

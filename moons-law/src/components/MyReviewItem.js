@@ -13,7 +13,7 @@ const MyReviewItem = ({ review, handleDelete }) => {
 
     // fatching image for service 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${sid}`)
+        fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services/${sid}`)
             .then(res => res.json())
             .then(data => {
                 setServiceData(data)
@@ -23,7 +23,6 @@ const MyReviewItem = ({ review, handleDelete }) => {
     }, [sid])
 
     const handleEdit = (id) => {
-        console.log(id);
         navigate(`/reviews/edit/${id}`)
     }
 

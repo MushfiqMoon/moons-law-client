@@ -23,12 +23,12 @@ export const routes = createBrowserRouter([
             {
                 path: "/",
                 element: <HomePage />,
-                loader: async () => fetch(`http://localhost:5000/services`),
+                loader: async () => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services`),
             },
             {
                 path: "/home",
                 element: <HomePage />,
-                loader: async () => fetch(`http://localhost:5000/services`),
+                loader: async () => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services`),
             },
             {
                 path: "/blog",
@@ -44,14 +44,14 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/services",
-                loader: async () => fetch(`http://localhost:5000/services`),
+                loader: async () => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services`),
                 element: <AllServicesPage />,
             },
 
             {
                 path: "/services/:id",
                 element: <ServiceSingle />,
-                loader: async ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader: async ({ params }) => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services/${params.id}`),
             },
             {
                 path: "/add-services",
@@ -64,7 +64,7 @@ export const routes = createBrowserRouter([
             {
                 path: "/reviews/edit/:id",
                 element: <PrivateRoute><MyReviewEdit /></PrivateRoute>,
-                // loader: async ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`),
+                // loader: async ({ params }) => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/${params.id}`),
             },
 
         ]
