@@ -9,6 +9,7 @@ const ServiceSingle = () => {
     const { user } = useContext(AuthContext);
     const { imageUrl, name, message, price, _id } = useLoaderData();
     const [reviews, setReviews] = useState([])
+    const stamp = new Date().getTime()
     // Dynami Title
     useTitle(name)
 
@@ -23,6 +24,7 @@ const ServiceSingle = () => {
             reviewerName: user?.displayName,
             rmail: user?.email,
             reviewerphotoUrl: user?.photoURL,
+            timeStamp: stamp
         }
 
         // sending the data to server
@@ -63,7 +65,6 @@ const ServiceSingle = () => {
             .catch(err => console.error(err))
 
     }, [_id])
-
 
     return (
         <>
@@ -114,10 +115,9 @@ const ServiceSingle = () => {
                 }
 
                 {
-                    reviews.length
+                    reviews?.length
                         ?
-                        reviews.map((review, index) =>
-
+                        reviews.sort((a, b) => b.timeStamp - a.timeStamp).map((review, index) =>
                             <section key={index} className="text-gray-600 body-font overflow-hidden">
                                 <div className='py-12'>
                                     <div className="-my-8 divide-y-2 divide-gray-100">

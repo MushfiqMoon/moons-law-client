@@ -13,7 +13,7 @@ const Register = () => {
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/';
 
-    const { providerLogin, createUser, updateUserInfo } = useContext(AuthContext);
+    const {  createUser, updateUserInfo } = useContext(AuthContext);
 
 
     const handleSubmit = (e) => {
@@ -23,8 +23,6 @@ const Register = () => {
         const photoURL = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log('first', name, photoURL, email, password)
-
 
         // REGISTER 
         createUser(email, password)
