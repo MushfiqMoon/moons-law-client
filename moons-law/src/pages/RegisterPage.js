@@ -3,9 +3,11 @@ import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import QuickLogin from '../components/common/QuickLogin'
 import { AuthContext } from '../contexts/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const Register = () => {
-
+    // Dynami Title
+    useTitle('Register')
     // dynamic Route Link 
     const location = useLocation();
     const navigate = useNavigate()

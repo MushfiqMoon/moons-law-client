@@ -3,8 +3,11 @@ import { Link, useLoaderData } from 'react-router-dom';
 import MiniHero from '../components/common/MiniHero'
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { SpinnerDotted } from 'spinners-react';
+import useTitle from '../hooks/useTitle';
 
 const AllServicesPage = () => {
+  // Dynami Title
+  useTitle('All Service')
 
   const services = useLoaderData();
   const latestServices = services.sort((a, b) => b.timeStamp - a.timeStamp);

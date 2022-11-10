@@ -64,7 +64,6 @@ export const routes = createBrowserRouter([
             {
                 path: "/reviews/edit/:id",
                 element: <PrivateRoute><MyReviewEdit /></PrivateRoute>,
-                // loader: async ({ params }) => fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/${params.id}`),
             },
 
         ]

@@ -1,8 +1,11 @@
 import React, { useContext } from 'react'
 import toast from 'react-hot-toast';
 import { AuthContext } from '../contexts/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const AddSErvice = () => {
+     // Dynami Title
+   useTitle('Add Service')
 
     const { user } = useContext(AuthContext);
     const stamp = new Date().getTime()

@@ -2,12 +2,15 @@ import React, { useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const ServiceSingle = () => {
 
     const { user } = useContext(AuthContext);
     const { imageUrl, name, message, price, _id } = useLoaderData();
     const [reviews, setReviews] = useState([])
+    // Dynami Title
+    useTitle(name)
 
     const handleReview = e => {
         e.preventDefault()

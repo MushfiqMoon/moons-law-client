@@ -1,7 +1,11 @@
 import React from 'react'
 import MiniHero from '../components/common/MiniHero'
+import useTitle from '../hooks/useTitle'
 
 const Blog = () => {
+    // Dynami Title
+    useTitle('Blog')
+
     return (
         <>
             <MiniHero title="Blogs" />

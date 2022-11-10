@@ -3,6 +3,7 @@ import toast from 'react-hot-toast'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import QuickLogin from '../components/common/QuickLogin'
 import { AuthContext } from '../contexts/AuthProvider'
+import useTitle from '../hooks/useTitle'
 
 
 
@@ -14,6 +15,8 @@ const LoginPage = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     const navigate = useNavigate()
+    // Dynami Title
+    useTitle('Login')
 
     // user and password loing 
     const handleSubmit = e => {

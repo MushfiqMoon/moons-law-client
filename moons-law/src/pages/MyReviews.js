@@ -3,8 +3,11 @@ import MyReviewItem from '../components/MyReviewItem';
 import { AuthContext } from '../contexts/AuthProvider';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import useTitle from '../hooks/useTitle';
 
 const MyReviews = () => {
+   // Dynami Title
+   useTitle('My Review')
 
   const [myReviews, setMyReviews] = useState([])
   const [refresh, setRefresh] = useState(false)

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import {  Link, useNavigate, useParams } from 'react-router-dom';
+import useTitle from '../hooks/useTitle';
 
 const MyReviewEdit = () => {
+    // Dynami Title
+    useTitle('Edit Review')
 
     const [review, setReview] = useState({})
     const navigate = useNavigate();
