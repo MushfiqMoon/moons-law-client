@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useLoaderData } from 'react-router-dom';
 import MiniHero from '../components/common/MiniHero'
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const AllServicesPage = () => {
 
@@ -24,9 +25,13 @@ const AllServicesPage = () => {
 
             {
               latestServices.map(data =>
-                <div key={data?._id} className="xl:w-1/4 md:w-1/2 p-4">
+                <div key={data?._id} className="xl:w-1/3 md:w-1/2 p-4">
                   <div className="bg-gray-100 p-3 rounded-lg">
-                    <img className="h-40 rounded w-full object-cover object-center mb-6" src={data ? data?.imageUrl : 'https://dummyimage.com/720x400'} />
+                    <PhotoProvider>
+                      <PhotoView src={data ? data?.imageUrl : 'https://dummyimage.com/720x400'}>
+                        <img className="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src={data ? data?.imageUrl : 'https://dummyimage.com/720x400'} />
+                      </PhotoView>
+                    </PhotoProvider>
                     <h3 className="tracking-widest text-accent text-lg font-medium title-font">${data?.price}</h3>
                     <h2 className="text-xl text-primary font-medium title-font mb-4">{data?.name}</h2>
                     <p className="leading-relaxed text-base">{data?.message.slice(0, 100)} ...</p>

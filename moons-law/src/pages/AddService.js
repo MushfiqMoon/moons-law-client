@@ -74,7 +74,7 @@ const AddSErvice = () => {
                             </div>
                         </div>
                         <div className="p-2 w-full">
-                            <button className="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Button</button>
+                            <button className="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Add</button>
                         </div>
                     </form>
                 </div>

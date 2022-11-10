@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const MyReviewItem = ({ review, handleDelete }) => {
 
@@ -15,7 +16,7 @@ const MyReviewItem = ({ review, handleDelete }) => {
             .then(data => {
                 setServiceData(data)
             })
-            .catch(err => console.error(err))        
+            .catch(err => console.error(err))
 
     }, [sid])
 
@@ -26,7 +27,11 @@ const MyReviewItem = ({ review, handleDelete }) => {
                 <div className='flex items-center'>
                     <div className="avatar p-3">
                         <div className="mask w-24 h-12 border-4 border-accent">
-                            <img src={serviceData ? serviceData?.imageUrl : "https://via.placeholder.com/230x115"} alt="Service" className='' />
+                            <PhotoProvider>
+                                <PhotoView src={serviceData ? serviceData?.imageUrl : "https://dummyimage.com/230x115"}>
+                                    <img src={serviceData ? serviceData?.imageUrl : "https://dummyimage.com/230x115"} alt="Service" className='cursor-pointer' />
+                                </PhotoView>
+                            </PhotoProvider>
                         </div>
                     </div>
                     <Link to={`/services/${sid}`}>{serviceName}</Link>

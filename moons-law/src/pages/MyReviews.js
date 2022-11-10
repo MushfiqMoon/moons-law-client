@@ -12,7 +12,11 @@ const MyReviews = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/?rmail=${user?.email}`)
+    fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/?rmail=${user?.email}`,{
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('moonslaw-token')}`
+      }
+    })
       .then(res => res.json())
       .then(data => {
         setMyReviews(data)

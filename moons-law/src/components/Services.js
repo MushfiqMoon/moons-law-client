@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Services = ({ services }) => {
 
@@ -14,7 +15,7 @@ const Services = ({ services }) => {
                         <div className="w-24 h-full bg-accent"></div>
                     </div>
                     <div className="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
-                        <h1 className="sm:w-2/5 text-accent font-medium title-font text-2xl mb-2 sm:mb-0">How Can I Help You</h1>
+                        <h1 className="sm:w-2/5 text-accent font-medium title-font text-2xl mb-2 sm:mb-0">Explore my Latest Services</h1>
                         <p className="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Collaborations among attorneys in various disciplines produce innovative legal solutions for my clients. I work across offices and provide the capabilities necessary to generate great results for my clients.</p>
                     </div>
                 </div>
@@ -24,11 +25,15 @@ const Services = ({ services }) => {
 
                             <div key={data?._id} className="p-4 md:w-1/3 sm:mb-0 mb-6">
                                 <div className="rounded-lg h-64 overflow-hidden">
-                                    <img src={data? data?.imageUrl : 'https://dummyimage.com/1203x503'} alt={data?.name} className="object-cover object-center h-full w-full" />
+                                    <PhotoProvider>
+                                        <PhotoView src={data ? data?.imageUrl : 'https://dummyimage.com/1203x503'}>
+                                            <img src={data ? data?.imageUrl : 'https://dummyimage.com/1203x503'} alt={data?.name} className="cursor-pointer object-cover object-center h-full w-full" />
+                                        </PhotoView>
+                                    </PhotoProvider>
                                 </div>
                                 <h2 className="text-2xl font-medium title-font text-gray-900 mt-5">{data?.name}</h2>
                                 <h2 className="text-xl font-bold title-font text-primary mt-2">${data?.price}</h2>
-                                <p className="text-base leading-relaxed mt-2">{data?.message.slice(0,150)} ...</p>
+                                <p className="text-base leading-relaxed mt-2">{data?.message.slice(0, 150)} ...</p>
                                 <Link to={`/services/${data?._id}`} className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
                                     <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
