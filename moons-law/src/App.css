@@ -5,3 +5,7 @@ header nav a.active {
 .tbl-btm-line tbody tr {
     border-bottom: 1px solid #ddd;
 }
+
+input[readonly] {
+    color: #a5aab1;
+}

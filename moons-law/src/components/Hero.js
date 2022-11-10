@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
     return (
@@ -12,7 +13,7 @@ const Hero = () => {
                             Legal Solution</h1>
                         <p className="mb-5">Law is commonly Understood as a System of rules that are Created
                             and Enforced through social or Government</p>
-                        <button className="btn btn-primary text-accent">Get Started</button>
+                        <Link to='/services' className="btn btn-primary text-accent">Explore More</Link>
                     </div>
                 </div>
             </div>

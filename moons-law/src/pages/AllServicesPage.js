@@ -24,24 +24,32 @@ const AllServicesPage = () => {
           <div className="flex flex-wrap -m-4">
 
             {
-              latestServices.map(data =>
-                <div key={data?._id} className="xl:w-1/3 md:w-1/2 p-4">
-                  <div className="bg-gray-100 p-3 rounded-lg">
-                    <PhotoProvider>
-                      <PhotoView src={data ? data?.imageUrl : 'https://dummyimage.com/720x400'}>
-                        <img className="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src={data ? data?.imageUrl : 'https://dummyimage.com/720x400'} />
-                      </PhotoView>
-                    </PhotoProvider>
-                    <h3 className="tracking-widest text-accent text-lg font-medium title-font">${data?.price}</h3>
-                    <h2 className="text-xl text-primary font-medium title-font mb-4">{data?.name}</h2>
-                    <p className="leading-relaxed text-base">{data?.message.slice(0, 100)} ...</p>
-                    <Link to={`/services/${data?._id}`} className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
-                      <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>)
+              // latestServices.length > 0
+              false
+                ?
+                latestServices.map(data =>
+                  <div key={data?._id} className="xl:w-1/3 md:w-1/2 p-4">
+                    <div className="bg-gray-100 p-3 rounded-lg">
+                      <PhotoProvider>
+                        <PhotoView src={data ? data?.imageUrl : 'https://dummyimage.com/720x400'}>
+                          <img className="h-40 rounded w-full object-cover object-center mb-6 cursor-pointer" src={data ? data?.imageUrl : 'https://dummyimage.com/720x400'} />
+                        </PhotoView>
+                      </PhotoProvider>
+                      <h3 className="tracking-widest text-accent text-lg font-medium title-font">${data?.price}</h3>
+                      <h2 className="text-xl text-primary font-medium title-font mb-4">{data?.name}</h2>
+                      <p className="leading-relaxed text-base">{data?.message.slice(0, 100)} ...</p>
+                      <Link to={`/services/${data?._id}`} className="text-yellow-500 hover:text-primary  inline-flex items-center mt-3">Learn More
+                        <svg fill="none" stroke="currentColor" strokeWidth="round" strokeLinejoin="round" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                          <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>)
+
+                :
+                <div className='d-flex justify-content-center mt-5'>
+                  <progress className="progress w-full"></progress>
+                </div>
             }
 
           </div>

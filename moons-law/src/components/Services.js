@@ -5,7 +5,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 const Services = ({ services }) => {
 
     const latestService = services.sort((a, b) => b.timeStamp - a.timeStamp);
-    const datas = latestService.slice(0, 3);
+    let datas = latestService.slice(0, 3);
 
     return (
         <section className="text-gray-600 body-font">
@@ -41,6 +41,7 @@ const Services = ({ services }) => {
                                 </Link>
                             </div>
                         )
+                        
                     }
                 </div>
 
