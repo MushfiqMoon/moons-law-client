@@ -23,22 +23,23 @@ const ServiceSingle = () => {
         }
 
         // sending the data to server
-        fetch('https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('moonslaw-token')}`
             },
             body: JSON.stringify(review),
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log("from post",data)
+                console.log("from post", data)
                 if (data.acknowledged) {
                     toast.success('Review Added')
                     form.reset()
                     // return
                 }
-                const newReview = [review,...reviews]
+                const newReview = [review, ...reviews]
                 setReviews(newReview)
 
             })
@@ -47,7 +48,11 @@ const ServiceSingle = () => {
     // Receiving service based review 
 
     useEffect(() => {
-        fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/?sid=${_id}`)
+        fetch(`http://localhost:5000/reviews/?sid=${_id}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('moonslaw-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

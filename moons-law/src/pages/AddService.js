@@ -22,7 +22,7 @@ const AddSErvice = () => {
 
         // sending the data to server
 
-        fetch('https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services', {
+        fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

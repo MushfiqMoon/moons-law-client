@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const MyReviewItem = ({ review, handleDelete }) => {
+
+    const navigate = useNavigate();
 
     const { sid, serviceName, reviewMessage, reviewerName, rmail, _id } = review;
 
@@ -11,7 +13,7 @@ const MyReviewItem = ({ review, handleDelete }) => {
 
     // fatching image for service 
     useEffect(() => {
-        fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/services/${sid}`)
+        fetch(`http://localhost:5000/services/${sid}`)
             .then(res => res.json())
             .then(data => {
                 setServiceData(data)
@@ -19,6 +21,11 @@ const MyReviewItem = ({ review, handleDelete }) => {
             .catch(err => console.error(err))
 
     }, [sid])
+
+    const handleEdit = (id) => {
+        console.log(id);
+        navigate(`/reviews/edit/${id}`)
+    }
 
 
     return (
@@ -44,7 +51,7 @@ const MyReviewItem = ({ review, handleDelete }) => {
             </td>
             <td className="px-4 py-3">
                 <div className="my-review-action flex">
-                    <Link to={`/reviews/edit/${_id}`} className='flex items-center py-2 pr-5 text-primary'><FaRegEdit /> Edit</Link>
+                    <button onClick={() => handleEdit(_id)} className='flex items-center py-2 pr-5 text-primary'><FaRegEdit /> Edit</button>
                     <button onClick={() => handleDelete(_id)} className='flex items-center py-2 text-orange-600'><FaRegTrashAlt /> Delete</button>
 
                 </div>

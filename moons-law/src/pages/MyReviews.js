@@ -12,7 +12,7 @@ const MyReviews = () => {
   const { user, logOut } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/?rmail=${user?.email}`, {
+    fetch(`http://localhost:5000/reviews/?rmail=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem('moonslaw-token')}`
       }
@@ -30,8 +30,13 @@ const MyReviews = () => {
     console.log('clicked', id);
 
     // sending the data to server
-    fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/${id}`, {
-      method: 'Delete'
+    fetch(`http://localhost:5000/reviews/${id}`, {
+      method: 'Delete',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('moonslaw-token')}`
+      },
+
     })
       .then((res) => res.json())
       .then((data) => {
