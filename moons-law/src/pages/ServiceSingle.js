@@ -32,7 +32,6 @@ const ServiceSingle = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                authorization: `Bearer ${localStorage.getItem('moonslaw-token')}`
             },
             body: JSON.stringify(review),
         })
@@ -48,15 +47,10 @@ const ServiceSingle = () => {
 
             })
     }
-
     // Receiving service based review 
 
     useEffect(() => {
-        fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/?sid=${_id}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('moonslaw-token')}`
-            }
-        })
+        fetch(`https://b6a11-service-review-server-side-mushfiq-moon.vercel.app/reviews/?sid=${_id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
