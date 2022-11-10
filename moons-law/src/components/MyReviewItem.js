@@ -44,7 +44,7 @@ const MyReviewItem = ({ review, handleDelete }) => {
             </td>
             <td className="px-4 py-3">
                 <div className="my-review-action flex">
-                    <Link to={`/my-reviews/edit/${_id}`} className='flex items-center py-2 pr-5 text-primary'><FaRegEdit /> Edit</Link>
+                    <Link to={`/reviews/edit/${_id}`} className='flex items-center py-2 pr-5 text-primary'><FaRegEdit /> Edit</Link>
                     <button onClick={() => handleDelete(_id)} className='flex items-center py-2 text-orange-600'><FaRegTrashAlt /> Delete</button>
 
                 </div>

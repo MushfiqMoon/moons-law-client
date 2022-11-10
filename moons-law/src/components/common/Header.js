@@ -32,7 +32,7 @@ const Header = () => {
                 {
                     user?.uid ?
                         <>
-                            <NavLink to='/my-reviews' className="text-white mr-5 hover:text-gray-900">My Reviews</NavLink>
+                            <NavLink to='/reviews' className="text-white mr-5 hover:text-gray-900">My Reviews</NavLink>
                             <NavLink to="/add-services" className="text-white mr-5 hover:text-gray-900">Add Service</NavLink>
                             
                             <button onClick={handleLogout} className="inline-flex items-center bg-accent border-0 py-1 px-3 focus:outline-none hover:bg-black rounded text-base-300 mt-4 md:mt-0">Log Out</button>

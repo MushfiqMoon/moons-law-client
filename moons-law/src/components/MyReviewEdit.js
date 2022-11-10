@@ -30,7 +30,7 @@ const MyReviewEdit = () => {
                 console.log(data)
                 if (data.modifiedCount) {
                     toast.success('Review Updated');
-                    navigate("/my-reviews")
+                    navigate("/reviews")
                 } else {
                     toast.error("Update Failed")
                 }
